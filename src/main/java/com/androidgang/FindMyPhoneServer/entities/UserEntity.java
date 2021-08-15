@@ -1,5 +1,6 @@
 package com.androidgang.FindMyPhoneServer.entities;
 
+
 import lombok.experimental.Accessors;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -11,17 +12,14 @@ import java.util.List;
 @Document
 @Data
 @Accessors(chain = true)
-public class DeviceEntity {
+public class UserEntity {
 
     @Id
-    private String userId;
+    private String email;
 
-    private String deviceId;
+    private List<DeviceEntity> devices = new ArrayList<>();
 
-    private String name;
-    private List<Metrics> metrics = new ArrayList<>();
-
-    public void addMetrics(Metrics m) {
-        metrics.add(m);
+    public void addDevices(DeviceEntity d) {
+        devices.add(d);
     }
 }

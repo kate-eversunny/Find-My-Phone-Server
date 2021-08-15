@@ -5,8 +5,8 @@ import lombok.Data;
 @Data
 public class Metrics {
 
-    private long longitude;
-    private long latitude;
+    private double longitude;
+    private double latitude;
     private long time;
     private String cellId;
     private String lac;
